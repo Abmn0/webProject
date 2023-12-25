@@ -1,0 +1,938 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+
+    --bg-color: #fff;
+    --text-color: #221314;
+    --second-color: #5a7184;
+    --main-color: #6e54fa;
+    --big-font: 7rem;
+    --h2-font: 3rem;
+    --p-font: 1.1rem;
+    --t0-color: #03A53A;
+    --t1-color: #0E7A33;
+    --t2-color: #0E7A33;
+    --t3-color: #046B27;
+
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color)
+}
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 30px 18%;
+    transition: ease .40s;
+}
+
+.logo {
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--bg-color);
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: var(--bg-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 4px;
+    transition: ease .40s;
+}
+
+
+.navbar a:hover {
+    background: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 4px;
+}
+
+#menu-icon {
+    color: var(--bg-color);
+    font-size: 35px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    padding: 80px 18%;
+}
+
+
+
+.categories-dropdown:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    background:#CFCFCF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.sub-menu li {
+    display: block;
+    width: 100%;
+}
+
+.sub-menu a {
+    color: var(--text-color);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub-menu a:hover {
+    background: var(--bg-color-light);
+}
+
+/* Home kısmı cssler */
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+
+    background-color: #033207;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%23033207'/%3E%3Cstop offset='1' stop-color='%232E7545'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.home-text h1 {
+    font-size: var(--big-font);
+    line-height: 1.2;
+    color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.home-text h3 {
+    font-size: var(--h2-font);
+    line-height: 1.2;
+    color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+
+}
+
+.home-text {
+    color: #ffffffbf;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 38px;
+    margin-bottom: 50px;
+}
+
+.home-btn {
+    display: inline-block;
+    font-size: 16px;
+    padding: 15px 30px;
+    background: #ffffffbf;
+    color: var(--main-color);
+    border-radius: 4px;
+    transition: ease .40s;
+}
+
+.home-btn:hover {
+    background: var(--bg-color);
+    transform: scale(1.1);
+}
+
+header.sticky {
+    background: var(--bg-color);
+    padding: 10px 18%;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.sticky .logo {
+    /*Sayfayı kaydırınca Logo ne yapsın?*/
+    color: var(--t2-color);
+}
+
+.sticky .navbar a {
+    /*Sayfayı kaydırınca navbar elemanları (mmenü elemanları) ne yapsın?*/
+    color: var(--t2-color);
+}
+
+.text h2 {
+    font-size: var(--h2-font);
+    line-height: 1.1;
+}
+
+.row-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 2rem;
+    align-items: stretch;
+    text-align: center;
+    margin-top: 5rem;
+}
+/* container kısmı cssler */
+.container-box {
+    background: var(--bg-color);
+    border: 1px solid #f0eded;
+    padding: 50px 10px;
+    border-radius: 4px;
+    transition: all 1s ease 0s;
+    cursor: pointer;
+}
+
+.container-img img {
+    height: 175px;
+    width: 175px;
+    padding: 15px;
+    background: var(--bg-color);
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+}
+
+.container-box h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.container-box p {
+    font-size: 15px;
+    color: var(--second-color);
+}
+
+.container-box:hover {
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%);
+    border: 1px solid transparent;
+    transform: translateY(-3px);
+}
+
+.title {
+    text-align: center;
+}
+
+.title h2 {
+    font-size: var(--h2-font);
+    line-height: 1.2;
+}
+
+.package-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.thum {
+    position: relative;
+    transition: all .3s cubic-bezier(.445, .05, .55, .95);
+    will-change: filter;
+    cursor: pointer;
+}
+
+.thum img {
+    width: 100%;
+    height: auto;
+}
+
+.thum h3 {
+    /* buraya ayar çekilecek!!!!!! */
+    position: absolute;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: right;
+    color: var(--text-color);
+    top: 36px;
+    right: 40px;
+}
+
+.dest-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+}
+
+.star i {
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+.ozellik h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.ozellik p {
+    font-size: 15px;
+    color: var(--second-color-color);
+}
+
+.thum:hover {
+    filter: brightness(100%) hue-rotate(45deg);
+    transform: scale(1.04);
+}
+
+/* box kısmı cssler */
+
+.box {
+    border: 2px solid #ddd;
+    /* İstediğiniz renk ve kalınlıkta border ekleyebilirsiniz */
+    border-radius: 8px;
+    /* Kenar yuvarlama */
+    overflow: hidden;
+    /* İçerikten taşanları gizleme */
+    position: relative;
+    /* Pozisyonu belirleme */
+    transition: all .3s cubic-bezier(.445, .05, .55, .95);
+    /* Geçiş efekti */
+}
+
+.box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Hover durumunda gölge efekti */
+}
+
+.plus-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--t3-color);
+    /* İstediğiniz renk */
+    color: #fff;
+    /* Buton rengi */
+    border: none;
+    padding: 8px 14px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    /* Geçiş efekti */
+}
+
+.plus-button:hover {
+    background-color: var(--main-color);
+    /* Hover durumunda buton rengi */
+}
+
+
+
+
+.firmalar-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.col-content {
+    position: relative;
+}
+
+.col-content img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    filter: brightness(97%);
+    transition: all .3s cubic-bezier(.495, .05, .55, .95);
+    will-change: filter;
+}
+
+.col-content h5 {
+    position: absolute;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-color);
+    left: 15px;
+    bottom: 60px;
+}
+
+.col-content p {
+    position: absolute;
+    font-size: 15px;
+    color: var(--text-color);
+    left: 15px;
+    bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.col-content img:hover {
+    filter: brightness(100%) hue-rotate(10deg);
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+.newsletter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 3rem;
+}
+
+.news-text h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 5px;
+}
+
+.news-text p {
+    font-size: var(--p-font);
+    color: var(--second-color);
+    line-height: 30px;
+}
+
+.newsletter form {
+    max-width: 100%;
+    width: 450px;
+    position: relative;
+}
+
+.newsletter form input:first-child {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 150px 20px 30px;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    outline: none;
+    border: none;
+    border-radius: 15px;
+}
+
+.newsletter form input:last-child {
+    display: inline-block;
+    position: relative;
+    outline: none;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 15px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    top: 6px;
+    cursor: pointer;
+}
+
+
+#contact {
+    /* Sayfa altı footer kısmı en dıştan ne yapsın?*/
+    background: var(--t3-color);
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    padding: 20px 0;
+}
+
+.list {
+    width: 25%;
+}
+
+.list h4 {
+    font-size: 24px;
+    color: var(--bg-color);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.list h4::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    left: 0;
+    bottom: -10px;
+    background: var(--bg-color);
+
+}
+
+.list ul li:not(last-child) {
+    margin-bottom: 16px;
+}
+
+.list ul li a {
+    color: #ffffff;
+    font-size: var(--p-font);
+    display: block;
+    transition: .3s;
+}
+
+.list ul li a:hover {
+    color: var(--bg-color);
+    transform: translateX(14px);
+}
+
+.list .social a {
+    height: 40px;
+    width: 40px;
+    background: var(--bg-color);
+    color: var(--main-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    border-radius: 12px;
+    transition: .3s;
+    margin-right: 10px;
+}
+
+.list .social a:hover {
+    transform: scale(1.1);
+}
+
+.end-text {
+    text-align: center;
+    padding-top: 90px;
+}
+
+.end-text p {
+    color: var(--bg-color);
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+/* Responsive kısım 1 cssler */
+@media(max-width: 1400px) {
+    header {
+        padding: 17px 3%;
+        transition: .2s;
+    }
+
+    header.sticky {
+        padding: 10px 3%;
+        transition: .2s;
+    }
+
+    section {
+        padding: 80px 3%;
+        transition: .2s;
+    }
+
+    :root {
+        --big-font: 4.5rem;
+        --h2-font: 2.3rem;
+        --p-font: 1rem;
+        transition: .2s;
+    }
+}
+
+@media(max-width: 1040px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .sticky #menu-icon {
+        color: var(--t2-color);
+    }
+
+    .home {
+        height: 100vh;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 230px;
+        height: 120vh;
+        background: #046B27;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 30px;
+        transform: 0.5s all;
+    }
+
+    .navbar a {
+        display: block;
+        margin: 1.2rem 0;
+        color: var(--bg-color);
+    }
+
+    .sticky .navbar a {
+        color: var(--bg-color);
+    }
+
+    .sub-menu a {
+        color: var(--t0-color);
+        color: #03A53A;
+    }
+
+    .navbar a:hover {
+        color: var(--text-color);
+    }
+
+    .open {
+        right: 0;
+    }
+
+    .list {
+        width: 50%;
+        margin-bottom: 12px;
+    }
+}
+
+@media(max-width: 575px) {
+    .list {
+        width: 100%;
+    }
+
+    .newsletter form {
+        width: 350px;
+    }
+
+    :root {
+        --big-font: 3.8rem;
+        --h2-font: 1.8rem;
+        transition: .2s;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .home {
+        height: 100vh;
+        transition: .2s;
+    }
+}
+
+.videobackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+}
+
+
+
+
+.picture-basket {
+    width: 40px;
+}
+
+
+
+.basket-count {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    background-color: rgb(9, 255, 0);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    left: 20px;
+}
+
+
+.cartTab {
+    width: 400px;
+    background-color: var(--t0-color);
+    color: var(--bg-color);
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+
+body.showCart .cartTab {
+    inset: 0 0 0 auto;
+}
+
+body.showCart .container-basket {
+    transform: translateX(-250px);
+}
+
+.cartTab h2 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    background-color: #ffffff;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cartTab .btn .close {
+    background-color: rgb(243, 148, 148);
+}
+
+.cartTab .listCart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.cartTab .listCart .item img {
+    width: 100%;
+}
+
+.listCart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: var(--bg-color);
+    color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: var(--bg-color);
+}
+
+.listCart .item:nth-child(even) {
+    background-color: #eee1;
+}
+
+.listCart {
+    overflow: auto;
+}
+
+.listCart::-webkit-scrollbar {
+    width: 0;
+}
+
+
+#overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+form {
+    max-width: 550px;
+    width: 90%;
+    background: white;
+    margin: 17vh auto 0 auto;
+    padding: 40px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+form h1 {
+    margin: 0;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 20px 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+    border: none;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-bottom: 1px solid #03A53A;
+}
+
+textarea::-webkit-scrollbar {
+    width: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #32F073;
+}
+
+.center {
+    text-align: center;
+}
+
+input[type="submit"] {
+    margin-top: 30px;
+    width: 90%;
+    max-width: 200px;
+    background: linear-gradient(to right, #0E7A33, #03A53A);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.error {
+    color: red;
+}
+
+.error-border {
+    border-bottom: 1px solid red;
+}
+
+#success {
+    color: #32F073;
+}
+
+
+.about {
+    max-width: 100%;
+    width: 100%;
+    background: white;
+    margin: auto auto 0 auto;
+    padding: 40px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.home-text img {
+    max-width: 1000px;
+    width: 90%;
+    border-radius: 10px;
+
+}
+/* Hizmetler kısmı body cssler */
+.tservice-body {
+    font-weight: 600;
+    color: var(--bg-color);
+    background-color: #033207;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%23033207'/%3E%3Cstop offset='1' stop-color='%232E7545'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.service-card {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(240, 234, 234, 0.42);
+    box-shadow: 0 0 0 0.9375em rgba(0, 0, 0, 0.219);
+    width: 1000px;
+    border-radius: 4px;
+    display: flex;
+    margin-bottom: -100px;
+}
+
+.card_hero {
+    flex: 0 0 50%;
+    position: relative;
+}
+
+.card_content {
+    flex: 1;
+    padding: 35px 35px 25px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card_img {
+    display: block;
+    width: 100%;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-product {
+    font-size: 28px;
+}
+
+.detail {
+    position: relative;
+    font-size: 17px;
+
+}
+
+@media (max-width: 700px) {
+    .service-card {
+        height: auto;
+
+    }
+
+    .card {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .card_hero {
+        order: 2;
+    }
+
+    .card-info {
+        align-items: center;
+
+    }
+
+    .card-product {
+        font-size: 18px;
+
+    }
+
+    .detail {
+        font-size: 14px;
+ 
+    }
+
+
+}
+
